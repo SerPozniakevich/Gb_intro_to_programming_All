@@ -32,20 +32,36 @@
 // выводить, является ли второе число кратным первому.
 // Если число 2 не кратно числу 1, то программа выводит остаток деления.
 
-Console.Clear();
-Console.Write("Введите первое число:");
-int num1 = Convert.ToInt32(Console.ReadLine());
-Console.Write("Введите второе число:");
-int num2 = Convert.ToInt32(Console.ReadLine());
+// Console.Clear();
+// Console.Write("Введите первое число:");
+// int num1 = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Введите второе число:");
+// int num2 = Convert.ToInt32(Console.ReadLine());
 
-if (num2 % num1  == 0)
+// if (num2 % num1  == 0)
+// {
+//     Console.Write($"Число {num2} кратно числу {num1}");
+// }
+// else
+// {
+//     int rem = num2 % num1;
+//     Console.Write($"Число {num2} не кратно числу {num1}, остаток {rem}");
+// }
+
+// Задача 14. Напишите программу, которая принимает на вход число и 
+// проверяет, кратно ли оно однjвременно 7 и 23.
+
+Console.Clear();
+Console.Write("Введите число:");
+int num = Convert.ToInt32(Console.ReadLine());
+int div1 = 7;
+int div2 = 23;
+
+if (num % div1 == 0 | num % div2 == 0)
 {
-    Console.Write($"Число {num2} кратно числу {num1}");
+    Console.WriteLine($"Число {num} кратно {div1} и {div2}");
 }
 else
 {
-    int rem = num2 % num1;
-    Console.Write($"Число {num2} не кратно числу {num1}, остаток {rem}");
+    Console.WriteLine($"Число {num} не кратно {div1} и {div2}");
 }
-
-
