@@ -66,18 +66,33 @@ Console.Clear();
 // Задача 21. Напишите программу, которая принимает на вход координаты
 // двух точек и находит расстояние между ними в 2D пространстве.
 
-Console.Write("Введите Х1:");
-int x1 = int.Parse(Console.ReadLine());
-Console.Write("Введите Y1:");
-int y1 = int.Parse(Console.ReadLine());
-Console.Write("Введите Х2:");
-int x2 = int.Parse(Console.ReadLine());
-Console.Write("Введите Y2:");
-int y2 = int.Parse(Console.ReadLine());
+// Console.Write("Введите Х1:");
+// int x1 = int.Parse(Console.ReadLine());
+// Console.Write("Введите Y1:");
+// int y1 = int.Parse(Console.ReadLine());
+// Console.Write("Введите Х2:");
+// int x2 = int.Parse(Console.ReadLine());
+// Console.Write("Введите Y2:");
+// int y2 = int.Parse(Console.ReadLine());
 
-double d = Math.Sqrt(Math.Pow(x1-x2, 2)) + Math.Pow(y1-y2, 2);
+// double d = Math.Sqrt(Math.Pow(x1-x2, 2)) + Math.Pow(y1-y2, 2);
 
-Console.WriteLine($"d = {d:f3}"); //f3 - округление до 3 числа.
+// Console.WriteLine($"d = {d:f3}"); //f3 - округление до 3 числа.
+
+//Задача 22. Напишите программу, которая принимает на вход число (N) и выдаёт таблицу квадратов чисел от 1 до N.
 
 
+Console.Write("Введите положительное число: ");
+int num =Int16.Parse(Console.ReadLine());
+
+if (num < 0) Console.WriteLine($" Число {num} не является положительным");
+
+int i = 0;
+
+while (i < num)
+{
+    i++;
+
+    Console.Write( i * i + ", ");
+}
 
