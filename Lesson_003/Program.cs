@@ -50,24 +50,34 @@ Console.Clear();
 // Задача 18. Напишите программу, которая по заданному номеру четверти,
 //показывает диапозон возможных координат точек в этой четверти (х и у).
 
-Console.Write("Введите номер четверти: ");
-int quarter = int.Parse(Console.ReadLine());
+// Console.Write("Введите номер четверти: ");
+// int quarter = int.Parse(Console.ReadLine());
 
-switch (quarter)
-{
-    case 1 : Console.WriteLine("X > 0 Y > 0"); break;
-    case 2 : Console.WriteLine("X < 0 Y > 0"); break;
-    case 3 : Console.WriteLine("X < 0 Y < 0"); break;
-    case 4 : Console.WriteLine("X > 0 Y < 0"); break;
+// switch (quarter)
+// {
+//     case 1 : Console.WriteLine("X > 0 Y > 0"); break;
+//     case 2 : Console.WriteLine("X < 0 Y > 0"); break;
+//     case 3 : Console.WriteLine("X < 0 Y < 0"); break;
+//     case 4 : Console.WriteLine("X > 0 Y < 0"); break;
     
-    default: Console.WriteLine("Введена неправильная четверть"); break;
-}
+//     default: Console.WriteLine("Введена неправильная четверть"); break;
+// }
 
-// Задача 
+// Задача 21. Напишите программу, которая принимает на вход координаты
+// двух точек и находит расстояние между ними в 2D пространстве.
 
+Console.Write("Введите Х1:");
+int x1 = int.Parse(Console.ReadLine());
+Console.Write("Введите Y1:");
+int y1 = int.Parse(Console.ReadLine());
+Console.Write("Введите Х2:");
+int x2 = int.Parse(Console.ReadLine());
+Console.Write("Введите Y2:");
+int y2 = int.Parse(Console.ReadLine());
 
+double d = Math.Sqrt(Math.Pow(x1-x2, 2)) + Math.Pow(y1-y2, 2);
 
-
+Console.WriteLine($"d = {d:f3}"); //f3 - округление до 3 числа.
 
 
 
