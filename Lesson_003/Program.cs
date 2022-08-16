@@ -32,21 +32,36 @@ Console.Clear();
 
 // решение через функцию(метод)
 
-void printQuarter (int a, int b)
+// void printQuarter (int a, int b)
+// {
+// if (a > 0 && b > 0) Console.Write ("Первая четверть"); 
+// if (a < 0 && b > 0) Console.Write ("Вторая четверть");
+// if (a < 0 && b < 0) Console.Write ("Третья четверть");
+// if (a > 0 && b < 0) Console.Write ("Четвёртая четверть");
+// if (a == 0 || b == 0) Console.Write ("Ввели координаты равные 0. Повторите попытку.");
+// }
+
+// Console.Write ("Введите координаты точки Х не равные 0: ");
+// int x = Convert.ToInt32 (Console.ReadLine());
+// Console.Write ("Введите координаты точки Y не равные 0: ");
+// int y = Convert.ToInt32(Console.ReadLine());
+// printQuarter(x, y);
+
+// Задача 17_1. Напишите программу, которая по заданному номеру четверти,
+//показывает диапозон возможных координат точек в этой четверти (х и у).
+
+Console.Write("Введите номер четверти: ");
+int quarter = int.Parse(Console.ReadLine());
+
+switch (quarter)
 {
-if (a > 0 && b > 0) Console.Write ("Первая четверть"); 
-if (a < 0 && b > 0) Console.Write ("Вторая четверть");
-if (a < 0 && b < 0) Console.Write ("Третья четверть");
-if (a > 0 && b < 0) Console.Write ("Четвёртая четверть");
-if (a == 0 || b == 0) Console.Write ("Ввели координаты равные 0. Повторите попытку.");
+    case 1 : Console.WriteLine("X > 0 Y > 0"); break;
+    case 2 : Console.WriteLine("X < 0 Y > 0"); break;
+    case 3 : Console.WriteLine("X < 0 Y < 0"); break;
+    case 4 : Console.WriteLine("X > 0 Y < 0"); break;
+    
+    default: Console.WriteLine("Введена неправильная четверть"); break;
 }
-
-Console.Write ("Введите координаты точки Х не равные 0: ");
-int x = Convert.ToInt32 (Console.ReadLine());
-Console.Write ("Введите координаты точки Y не равные 0: ");
-int y = Convert.ToInt32(Console.ReadLine());
-printQuarter(x, y);
-
 
 
 
