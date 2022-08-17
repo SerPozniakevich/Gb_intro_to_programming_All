@@ -21,6 +21,8 @@ Console.Clear();
 
 //Задача 26: Напишите программу, которая принимает на вход число и выдаёт количество цифр в числе.
 
+// Вариант 1
+
 // Console.Write("Введите число: ");
 // int num = Convert.ToInt32(Console.ReadLine());
 // int ind = 0;
@@ -31,6 +33,15 @@ Console.Clear();
 //     ind += 1;
 // }
 // Console.Write($"В числе - {ind} цифр.");
+
+//Вариант 2
+
+Console.Write("Введите число: ");
+
+double N = Convert.ToDouble(Console.ReadLine());
+
+double digits_num = Math.Floor(Math.Log10(N) + 1);
+Console.WriteLine("Количество цифр введённом числе - " + digits_num);
 
 
 
@@ -56,12 +67,12 @@ Console.Clear();
 //заполненный нулями и единицами в случайном порядке. [1,0,1,1,0,1,0,0]
 
 
-int[] array = new int[8];
+// int[] array = new int[8];
 
-Random rnd = new Random();
-Console.Write("Случайный массив из 8 элементов в диапозоне [0, 1] - ");
-for (int i = 0; i < 8; i++)
-{
-    array[i] = rnd.Next(0, 2);
-    Console.Write (array[i] + ",");
-}
+// Random rnd = new Random();
+// Console.Write("Случайный массив из 8 элементов в диапозоне [0, 1] - ");
+// for (int i = 0; i < 8; i++)
+// {
+//     array[i] = rnd.Next(0, 2);
+//     Console.Write (array[i] + ",");
+// }
