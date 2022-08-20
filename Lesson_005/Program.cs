@@ -48,7 +48,7 @@ Console.Clear();
 // int num = Convert.ToInt32(Console.ReadLine());
 // Console.WriteLine("Введите первое число сучайного диапазона");
 // int min = Convert.ToInt32(Console.ReadLine());
-// Console.WriteLine("Введите последее число случайного дапазона");
+// Console.WriteLine("Введите последее число случайного диапазона");
 // int max = Convert.ToInt32(Console.ReadLine());
 
 // int[] myRandomArray = CreateRandomArray(num, min, max);
@@ -100,6 +100,39 @@ Console.Clear();
 // Задача 32. Напишите программу замена элементов массива: 
 // положительные замените на соответствующие отрицательные, и наоборот.
 
+// int[] CreatRandomArray(int size, int min, int max)
+// {
+//     int[] array = new int[size];
+//     for (int i = 0; i < size; i++)
+//     {
+//         array[i] = new Random().Next(min, max + 1);
+//     }
+//     return array;
+// }
+// void ShowArray(int[] array)  // функция вывода готового результата
+// {
+//     for (int i = 0; i < array.Length; i++)
+//     {
+//         Console.Write(array[i] + ", ");
+//     }
+//     Console.WriteLine();
+// }
+
+// int[] myArray = CreatRandomArray(12, -9, 9);
+// ShowArray(myArray);
+// Console.WriteLine("----------------------------------------");
+
+
+// int i = 0;
+// while (i < myArray.Length)
+// {
+//     myArray[i] = myArray[i]*-1;
+//     i++;
+
+// }
+// ShowArray(myArray);
+
+//Задача 33: Задайте массив. Напишите программу, которая определяет, присутствует ли заданное число в массиве.
 int[] CreatRandomArray(int size, int min, int max)
 {
     int[] array = new int[size];
@@ -109,6 +142,7 @@ int[] CreatRandomArray(int size, int min, int max)
     }
     return array;
 }
+
 void ShowArray(int[] array)  // функция вывода готового результата
 {
     for (int i = 0; i < array.Length; i++)
@@ -117,17 +151,28 @@ void ShowArray(int[] array)  // функция вывода готового р�
     }
     Console.WriteLine();
 }
+Console.WriteLine("Введите количество элементов в массиве");
+int size = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите первое число сучайного диапазона");
+int min = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите последее число случайного диапазона");
+int max = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите число из этого диапазона:");
+int find = Convert.ToInt32(Console.ReadLine());
+bool flag = false;
+int[] array = CreatRandomArray(size, min, max);
+ShowArray(array);  // функция вывода готового результата
 
-int[] myArray = CreatRandomArray(12, -9, 9);
-ShowArray(myArray);
-Console.WriteLine("----------------------------------------");
-
-
-int i = 0;
-while (i < myArray.Length)
+for (int i = 0; i < size; i++)
 {
-    myArray[i] = myArray[i]*-1;
-    i++;
-
+    if (array[i] == find)
+    {
+        flag = true;
+    }
+  
 }
-ShowArray(myArray);
+if (flag == true)
+{
+    Console.WriteLine($"Число {find} есть в заданном масиве.");
+} 
+else Console.WriteLine($"Числа {find} нет в заданном масиве.");
