@@ -182,6 +182,43 @@ Console.Clear();
 // которых лежат в отрезке [10,99].
 
 
+// int[] CreatRandomArray(int size, int min, int max)
+// {
+//     int[] array = new int[size];
+//     for (int i = 0; i < size; i++)
+//     {
+//         array[i] = new Random().Next(min, max + 1);
+//     }
+//     return array;
+// }
+// void ShowArray(int[] array)  // функция вывода готового результата
+// {
+//     for (int i = 0; i < array.Length; i++)
+//     {
+//         Console.Write(array[i] + ", ");
+//     }
+//     Console.WriteLine();
+// }
+// Console.WriteLine("Введите первое число сучайного диапазона");
+// int min = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите последее число случайного диапазона");
+// int max = Convert.ToInt32(Console.ReadLine());
+// int[] myArray = CreatRandomArray(123, min, max);
+// ShowArray(myArray);
+// int quant1099 = 0;
+
+// for (int i = 0; i < myArray.Length; i++)
+// {
+//     if (myArray[i] > 9 && myArray[i] < 100)
+//         quant1099 ++;
+// }
+
+// Console.WriteLine($"Количество элементов в массиве в отрезке [10,99]: {quant1099}.");
+
+// Задача 37: Найдите произведение пар чисел в одномерном массиве.
+// Парой считаем первый и последний элемент, второй и предпоследний и т.д.
+// Результат запишите в новом массиве.
+
 int[] CreatRandomArray(int size, int min, int max)
 {
     int[] array = new int[size];
@@ -191,6 +228,7 @@ int[] CreatRandomArray(int size, int min, int max)
     }
     return array;
 }
+
 void ShowArray(int[] array)  // функция вывода готового результата
 {
     for (int i = 0; i < array.Length; i++)
@@ -199,18 +237,21 @@ void ShowArray(int[] array)  // функция вывода готового р�
     }
     Console.WriteLine();
 }
+Console.WriteLine("Введите количество элементов в массиве");
+int size = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите первое число сучайного диапазона");
 int min = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите последее число случайного диапазона");
 int max = Convert.ToInt32(Console.ReadLine());
-int[] myArray = CreatRandomArray(123, min, max);
-ShowArray(myArray);
-int quant1099 = 0;
+int[] array = CreatRandomArray(size, min, max);
+ShowArray(array);  // функция вывода готового результата
 
-for (int i = 0; i < myArray.Length; i++)
+for (int i = 0; i < array.Length/2; i++)
 {
-    if (myArray[i] > 9 && myArray[i] < 100)
-        quant1099 ++;
+    int j = array[i] * array[(array.Length - 1) - i];
+    Console.Write($"{String.Join(",", j)}, ");
 }
-
-Console.WriteLine($"Количество элементов в массиве в отрезке [10,99]: {quant1099}.");
+if(array.Length % 2 != 0)
+{
+Console.Write($"{String.Join(", ", array[array.Length / 2])}");
+}
