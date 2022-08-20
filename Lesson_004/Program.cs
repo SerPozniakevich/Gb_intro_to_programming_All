@@ -36,27 +36,27 @@ Console.Clear();
 
 //Вариант 2
 
-Console.Write("Введите число: ");
+// Console.Write("Введите число: ");
 
-double N = Convert.ToDouble(Console.ReadLine());
+// double N = Convert.ToDouble(Console.ReadLine());
 
-double digits_num = Math.Floor(Math.Log10(N) + 1);
-Console.WriteLine("Количество цифр введённом числе - " + digits_num);
+// double digits_num = Math.Floor(Math.Log10(N) + 1);
+// Console.WriteLine("Количество цифр введённом числе - " + digits_num);
 
 
 
 
 //Задача 28: Напишите программу, которая принимает на вход число N и выдаёт произведение чисел от 1 до N.
 
-// Console.Write("Введите число: ");
-// int num = int.Parse(Console.ReadLine());
-//     int mult = 1; // начинаем с 1, так как при умножении на 0 = 0.
-//     for (int i = 1; i <= num; i++) // int i -стартовое значение, условие, действие.
-//     {
-//        mult *= i;                   //  сохранение произведения каждого значения при проходе цикла
-//     }
+Console.Write("Введите число: ");
+int num = int.Parse(Console.ReadLine());
+    int mult = 1; // начинаем с 1, так как при умножении на 0 = 0.
+    for (int i = 1; i <= num; i++) // int i -стартовое значение, условие, действие.
+    {
+       mult *= i;                   //  сохранение произведения каждого значения при проходе цикла
+    }
 
-// Console.WriteLine($"Произведение чисел от 1 до {num} = {mult}");
+Console.WriteLine($"Произведение чисел от 1 до {num} = {mult}");
 
 
 
