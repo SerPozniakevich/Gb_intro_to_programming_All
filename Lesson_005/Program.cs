@@ -43,7 +43,7 @@ Console.Clear();
 //     Console.WriteLine();
 // }
 
-// Console.Clear();
+
 // Console.WriteLine("Введите количество элементов в массиве");
 // int num = Convert.ToInt32(Console.ReadLine());
 // Console.WriteLine("Введите первое число сучайного диапазона");
@@ -63,6 +63,43 @@ Console.Clear();
 // Например, в массиве [3, 9, -8, 1, 0, -7, 2, -1, 8, -3, -1, 6] 
 //сумма положительных чисел равна 29, сумма отрицательных равна -20
 
+// int[] CreatRandomArray(int size, int min, int max)
+// {
+//     int[] array = new int[size];
+//     for (int i = 0; i < size; i++)
+//     {
+//         array[i] = new Random().Next(min, max + 1);
+//     }
+//     return array;
+// }
+// void ShowArray(int[] array)  // функция вывода готового результата
+// {
+//     for (int i = 0; i < array.Length; i++)
+//     {
+//         Console.Write(array[i] + ", ");
+//     }
+//     Console.WriteLine();
+// }
+
+// int[] myArray = CreatRandomArray(12, -9, 9);
+// ShowArray(myArray);
+
+// int sum_poz = 0;
+// int sum_neg = 0;
+// for (int i = 0; i < myArray.Length; i++)
+// {
+//     if (myArray[i] > 0)
+//         sum_poz +=myArray[i];
+//     else
+//         sum_neg += myArray[i];
+// }
+
+// Console.WriteLine($"Сумма положительных чисел: {sum_poz}. Сумма отрицательных: {sum_neg}");
+
+
+// Задача 32. Напишите программу замена элементов массива: 
+// положительные замените на соответствующие отрицательные, и наоборот.
+
 int[] CreatRandomArray(int size, int min, int max)
 {
     int[] array = new int[size];
@@ -72,7 +109,7 @@ int[] CreatRandomArray(int size, int min, int max)
     }
     return array;
 }
-void ShowArray(int[] array)
+void ShowArray(int[] array)  // функция вывода готового результата
 {
     for (int i = 0; i < array.Length; i++)
     {
@@ -83,18 +120,14 @@ void ShowArray(int[] array)
 
 int[] myArray = CreatRandomArray(12, -9, 9);
 ShowArray(myArray);
+Console.WriteLine("----------------------------------------");
 
-int sum_poz = 0;
-int sum_neg = 0;
-for (int i = 0; i < myArray.Length; i++)
+
+int i = 0;
+while (i < myArray.Length)
 {
-    if (myArray[i] > 0)
-        sum_poz +=myArray[i];
-    else
-        sum_neg += myArray[i];
+    myArray[i] = myArray[i]*-1;
+    i++;
+
 }
-
-Console.WriteLine($"Сумма положительных чисел: {sum_poz}. Сумма отрицательных: {sum_neg}");
-
-
-
+ShowArray(myArray);
