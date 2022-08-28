@@ -91,56 +91,101 @@
 //Найдите элементы, у которых обе позиции чётные, и замените эти элементы на их квадраты.
 
 
-int Prompt(string message)
-{
-    System.Console.Write(message);
-    int result = Convert.ToInt32(Console.ReadLine());
-    return result;
-}
+// int Prompt(string message)
+// {
+//     System.Console.Write(message);
+//     int result = Convert.ToInt32(Console.ReadLine());
+//     return result;
+// }
 
-int[,] FillArray(int numLine, int numColumns, int maxRand = 20, int minRand = 0)
+// int[,] FillArray(int numLine, int numColumns, int maxRand = 20, int minRand = 0)
+// {
+//     int[,] matrix = new int[numLine, numColumns];//Создание нового массива
+//     for (int i = 0; i < matrix.GetLength(0); i++)//Условие для создания строки
+//     {
+//         for (int j = 0; j < matrix.GetLength(1); j++) //Условие для создания столбца
+//         {
+//             matrix[i, j] = new Random().Next(minRand, maxRand); // Заполнение массива по формуле А = m +n
+//         }
+//     }
+//     return matrix; // Возвращение результата
+// }
+
+// void PrintArray(int[,] matrix) //Печать массива
+// {
+//     for (int i = 0; i < matrix.GetLength(0); i++)
+//     {
+//        for (int j = 0; j < matrix.GetLength(1); j++)
+//        {
+//             Console.Write($"{matrix[i,j]}\t"); //Заполнение строки (вывод очередной строки)
+//        } 
+//        Console.WriteLine(); //переход на следущую строку
+//     }
+// }
+
+
+// int[,] ConvertToSQR(int [,] array) //Функция для замены значений с чётными строками и столбцами на их квадрат
+// {
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j= 0; j< array.GetLength(1); j++)
+//         {
+//             if(i % 2 == 0 && j % 2 == 0) // 
+//             {
+//                 array[i, j] = array[i, j] * array[i, j];
+//             }
+//         }
+//     }
+//     return array;
+// }
+
+// int[,] massiv = FillArray(5, 5); //Объявляем массив "massiv", и указываем по какой функции он будет заполняться, указываем размер
+// PrintArray(massiv); // выводим на экран полученное
+// System.Console.WriteLine(); //Печать пустой строки
+// int[,] newmassiv = ConvertToSQR(massiv); //объявление нового массива и запуск функции SQR
+// PrintArray(newmassiv);// вывод результата на печать
+
+
+//Задайте двумерный массив. Найдите сумму элементов главной диагонали.
+
+Random rand = new Random();
+
+void FillMatrix (int[,] matr)
 {
-    int[,] matrix = new int[numLine, numColumns];//Создание нового массива
-    for (int i = 0; i < matrix.GetLength(0); i++)//Условие для создания строки
+    for (int i = 0; i < matr.GetLength(0); i++)
     {
-        for (int j = 0; j < matrix.GetLength(1); j++) //Условие для создания столбца
+        for (int j = 0; j < matr.GetLength(1); j++)
         {
-            matrix[i, j] = new Random().Next(minRand, maxRand); // Заполнение массива по формуле А = m +n
+            matr[i, j] = rand.Next(1, 15);
         }
     }
-    return matrix; // Возвращение результата
 }
 
-void PrintArray(int[,] matrix) //Печать массива
+void PrintArray(int[,] arr)
 {
+    for (int i = 0; i < arr.GetLength(0); i++)
+    {
+       for (int j = 0; j < arr.GetLength(1); j++)
+       {
+            Console.Write($"{arr[i, j]}\t");
+       } 
+       System.Console.WriteLine();
+    }
+}
+
+
+
+int[,] matrix = new int[3, 3];
+
+FillMatrix(matrix);
+PrintArray(matrix);
+System.Console.WriteLine(GetSum(matrix));
+int GetSum (int[,] matrix)
+{
+    int sum = 0;
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
-       for (int j = 0; j < matrix.GetLength(1); j++)
-       {
-            Console.Write($"{matrix[i,j]}\t"); //Заполнение строки (вывод очередной строки)
-       } 
-       Console.WriteLine(); //переход на следущую строку
+        sum += matrix[i, i];
     }
+    return sum;
 }
-
-
-int[,] ConvertToSQR(int [,] array) //Функция для замены значений с чётными строками и столбцами на их квадрат
-{
-    for (int i = 0; i < array.GetLength(0); i++)
-    {
-        for (int j= 0; j< array.GetLength(1); j++)
-        {
-            if(i % 2 == 0 && j % 2 == 0) // 
-            {
-                array[i, j] = array[i, j] * array[i, j];
-            }
-        }
-    }
-    return array;
-}
-
-int[,] massiv = FillArray(5, 5); //Объявляем массив "massiv", и указываем по какой функции он будет заполняться, указываем размер
-PrintArray(massiv); // выводим на экран полученное
-System.Console.WriteLine(); //Печать пустой строки
-int[,] newmassiv = ConvertToSQR(massiv); //объявление нового массива и запуск функции SQR
-PrintArray(newmassiv);// вывод результата на печать
