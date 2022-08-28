@@ -47,37 +47,37 @@
 //Задайте двумерный массив размера m на n, каждый элемент в массиве
 // находится по формуле: A = m+n. Выведете полученный массив на экран.
 
-// int Prompt(string message)
-// {
-//     System.Console.Write(message);
-//     int result = Convert.ToInt32(Console.ReadLine());
-//     return result;
-// }
+int Prompt(string message)
+{
+    System.Console.Write(message);
+    int result = Convert.ToInt32(Console.ReadLine());
+    return result;
+}
 
-// int[,] FillArray(int numLine, int numColumns)
-// {
-//     int[,] matrix = new int[numLine, numColumns];
-//     for (int i = 0; i < matrix.GetLength(0); i++)
-//     {
-//         for (int j = 0; j < matrix.GetLength(1); j++)
-//         {
-//             matrix[i, j] = i + j;
-//         }
-//     }
-//     return matrix;
-// }
+int[,] FillArray(int numLine, int numColumns)
+{
+    int[,] matrix = new int[numLine, numColumns];
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        for (int j = 0; j < matrix.GetLength(1); j++)
+        {
+            matrix[i, j] = i + j; // Заполнение массива по формуле А = m +n
+        }
+    }
+    return matrix;
+}
 
-// void PrintArray(int[,] matrix)
-// {
-//     for (int i = 0; i < matrix.GetLength(0); i++)
-//     {
-//        for (int j = 0; j < matrix.GetLength(1); j++)
-//        {
-//             Console.Write($"{matrix[i,j]}\t");
-//        } 
-//        Console.WriteLine();
-//     }
-// }
+void PrintArray(int[,] matrix)
+{
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+       for (int j = 0; j < matrix.GetLength(1); j++)
+       {
+            Console.Write($"{matrix[i,j]}\t");
+       } 
+       Console.WriteLine();
+    }
+}
 
-// int[,]array = FillArray(3, 4);
-// PrintArray(array);
+int[,]array = FillArray(Prompt("Введите число строк > "), Prompt("Введите число колонок > "));
+PrintArray(array);
