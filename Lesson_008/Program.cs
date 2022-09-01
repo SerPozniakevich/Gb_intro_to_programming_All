@@ -33,9 +33,17 @@ void ReplaceLine (int[,] matr) //Функция замены значений п
     int m = matr.GetLength(0) - 1;
     int temp = 0;
     System.Console.WriteLine();
-    for (int i = 0; i < matr.GetLength(1); i++)
+    for (int i = 0; i < matr.GetLength(0); i++)
     {
-        if(i == n)
+        if(i != n)
+        {
+            for (int j = 0; j < matr.GetLength(1); j++)
+            {
+                Console.Write($"{matr[i, j]}  ");
+            }
+            Console.WriteLine(); 
+        }
+        else
         {
             for (int j = 0; j < matr.GetLength(1); j++)
             {
@@ -44,21 +52,14 @@ void ReplaceLine (int[,] matr) //Функция замены значений п
                 matr[m, j] = temp;
                 Console.Write($"{matr[i, j]}  ");
             }
-            System.Console.WriteLine(); 
-        }
-        else
-        {
-            for (int j = 0; j < matr.GetLength(1); j++)
-            {
-                Console.Write($"{matr[i, j]}  "); 
-            }
             System.Console.WriteLine();
+
         }
     }
 }
 
 
-int[,] matrix = new int[3, 4];
+int[,] matrix = new int[4, 3];
 
 FillMatrix(matrix);
 PrintArray(matrix);
