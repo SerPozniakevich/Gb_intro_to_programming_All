@@ -68,6 +68,54 @@ Console.Clear();
 //Задача 55: Задайте двумерный массив. Напишите программу, которая заменяет строки на столбцы. 
 //В случае, если это не возможно, программа должна вывести сообщение для пользователя.
 
+// Random rand = new Random();
+
+// void FillMatrix (int[,] matr)
+// {
+//     for (int i = 0; i < matr.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matr.GetLength(1); j++)
+//         {
+//             matr[i, j] = rand.Next(1, 10);
+//         }
+//     }
+// }
+
+// void PrintArray(int[,] matr)
+// {
+//     for (int i = 0; i < matr.GetLength(0); i++)
+//     {
+//        for (int j = 0; j < matr.GetLength(1); j++)
+//        {
+//             Console.Write($"{matr[i, j]}  ");
+//        } 
+//        System.Console.WriteLine();
+//     }
+// }
+
+// void VertUTurnMatrix (int[,] matr)
+// {
+// if (matr.GetLength(0) <= matr.GetLength(1))
+// {
+//         for (int i = 0; i < matr.GetLength(0); i++)
+//         {
+//             for (int j = 0; j < matr.GetLength(0); j++)
+//             {
+//                 Console.Write($"{matr[j, i]}  ");
+//             }
+//             Console.WriteLine(); 
+//         }
+// }
+// else
+// {
+//   Console.WriteLine("Произвести разворот невозможно"); 
+// }
+// }
+
+
+
+
+
 Random rand = new Random();
 
 void FillMatrix (int[,] matr)
@@ -93,30 +141,40 @@ void PrintArray(int[,] matr)
     }
 }
 
-void VertUTurnMatrix (int[,] matr)
-{
-if (matr.GetLength(0) <= matr.GetLength(1))
-{
-        for (int i = 0; i < matr.GetLength(0); i++)
-        {
-            for (int j = 0; j < matr.GetLength(0); j++)
-            {
-                Console.Write($"{matr[j, i]}  ");
-            }
-            Console.WriteLine(); 
-        }
-}
-else
-{
-  Console.WriteLine("Произвести разворот невозможно"); 
-}
-}
-
-
-
 
 int[,] matrix = new int[4, 4];
 FillMatrix(matrix);
 PrintArray(matrix);
 System.Console.WriteLine("---------------------------");
-VertUTurnMatrix(matrix);
+
+
+
+
+            for (int i = 0; i < matrix.GetLength(0); i++) // Array Sorting
+            {
+                for (int j = matrix.GetLength(1) - 1; j > 0; j--)
+                {
+
+
+                    for (int k = 0; k < j; k++)
+                    {
+                        if (matrix[i, k] > matrix[i, k + 1])
+                        {
+                            int temp = matrix[i, k];
+                            matrix[i, k] = matrix[i, k + 1];
+                            matrix[i, k + 1] = temp;
+                        }
+                    }
+                }
+                Console.WriteLine();
+            }
+
+
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                for (int j = 0; j < matrix.GetLength(1); j++)
+                {
+                    Console.Write("{0,3}", matrix[i, j]);
+                }
+                Console.WriteLine();
+            }
