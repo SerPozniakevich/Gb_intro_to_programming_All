@@ -49,17 +49,29 @@ Console.Clear();
 //Задача 67: Напишите программу, которая будет принимать на вход число и
 // возвращать сумму его цифр.
 
-Console.Write("Введите число: ");
-int start = int.Parse(Console.ReadLine());
-int sum = 0;
-System.Console.WriteLine($"{start} -> {AmountNumbers(start, sum)}");
+// Console.Write("Введите число: ");
+// int start = int.Parse(Console.ReadLine());
+// int sum = 0;
+// System.Console.WriteLine($"{start} -> {AmountNumbers(start, sum)}");
 
-string AmountNumbers(int start, int sum)
-{
-    sum += start%10;
-    if (start == 0) return sum.ToString();
-    return (AmountNumbers(start/10, sum));
-}
+// string AmountNumbers(int start, int sum)
+// {
+//     sum += start % 10;
+//     if (start == 0) return sum.ToString();
+//     return (AmountNumbers(start / 10, sum));
+// }
 
 //Задача 69: Напишите программу, которая на вход принимает два числа А и В, и 
 //возводит число А в степень В с помощью рекурсии.
+
+Console.Write("Введите число: ");
+int num = int.Parse(Console.ReadLine());
+Console.Write("Введите степень числа: ");
+int expo = int.Parse(Console.ReadLine());
+Console.Write($"Число {num} в степени {expo} = {Exponentiation (num, expo)} ");
+
+int Exponentiation (int num, int expo)
+{
+    if (expo == 0) return 1;
+    return num * Exponentiation (num, expo - 1);
+}
