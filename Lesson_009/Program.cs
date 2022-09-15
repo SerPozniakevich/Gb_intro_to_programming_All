@@ -64,14 +64,29 @@ Console.Clear();
 //Задача 69: Напишите программу, которая на вход принимает два числа А и В, и 
 //возводит число А в степень В с помощью рекурсии.
 
+//Вариант 1:
+// Console.Write("Введите число: ");
+// int num = int.Parse(Console.ReadLine());
+// Console.Write("Введите степень числа: ");
+// int expo = int.Parse(Console.ReadLine());
+// Console.Write($"Число {num} в степени {expo} = {Exponentiation (num, expo)} ");
+
+// int Exponentiation (int num, int expo)
+// {
+//     if (expo == 0) return 1;
+//     return num * Exponentiation (num, expo - 1);
+// }
+
+//Вариант 2 без (ограничения по возведению в степень "0"):
+
 Console.Write("Введите число: ");
 int num = int.Parse(Console.ReadLine());
 Console.Write("Введите степень числа: ");
 int expo = int.Parse(Console.ReadLine());
+
 Console.Write($"Число {num} в степени {expo} = {Exponentiation (num, expo)} ");
 
 int Exponentiation (int num, int expo)
 {
-    if (expo == 0) return 1;
-    return num * Exponentiation (num, expo - 1);
+    return (expo == 1) ? num: num * Exponentiation (num, expo - 1);
 }
