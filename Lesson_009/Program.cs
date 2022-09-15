@@ -32,16 +32,34 @@ Console.Clear();
 //которая выведет все натуральные числа в промежудке от M до N. 
 
 
-System.Console.WriteLine("Enter M: ");
-int m = int.Parse(Console.ReadLine());
+// System.Console.WriteLine("Enter M: ");
+// int m = int.Parse(Console.ReadLine());
 
-System.Console.WriteLine("Enter N: ");
-int n = int.Parse(Console.ReadLine());
+// System.Console.WriteLine("Enter N: ");
+// int n = int.Parse(Console.ReadLine());
 
-System.Console.WriteLine(PrintNumbers(m,n));;
+// System.Console.WriteLine(PrintNumbers(m,n));;
 
-string PrintNumbers(int start, int end)
+// string PrintNumbers(int start, int end)
+// {
+//     if (start == end) return start.ToString();
+//     return (start + " " + PrintNumbers(start + 1, end));
+// }
+
+//Задача 67: Напишите программу, которая будет принимать на вход число и
+// возвращать сумму его цифр.
+
+Console.Write("Введите число: ");
+int start = int.Parse(Console.ReadLine());
+int sum = 0;
+System.Console.WriteLine($"{start} -> {AmountNumbers(start, sum)}");
+
+string AmountNumbers(int start, int sum)
 {
-    if (start == end) return start.ToString();
-    return (start + " " + PrintNumbers(start + 1, end));
+    sum += start%10;
+    if (start == 0) return sum.ToString();
+    return (AmountNumbers(start/10, sum));
 }
+
+//Задача 69: Напишите программу, которая на вход принимает два числа А и В, и 
+//возводит число А в степень В с помощью рекурсии.
